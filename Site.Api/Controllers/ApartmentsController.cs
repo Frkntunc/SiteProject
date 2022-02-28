@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Site.Application.Features.Commands.Apartments.AddApartment;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Site.Api.Controllers
 {
+    [Authorize (Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ApartmentsController : ControllerBase

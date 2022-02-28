@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Site.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BillsController : ControllerBase
@@ -34,7 +35,6 @@ namespace Site.Api.Controllers
             return Ok(result);
         }
 
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetBill()
         {

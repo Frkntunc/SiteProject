@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Site.Api.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
@@ -35,7 +36,6 @@ namespace Site.Api.Controllers
             return Ok(result);
         }
 
-        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddUser(AddUserCommand addUserCommand)
         {

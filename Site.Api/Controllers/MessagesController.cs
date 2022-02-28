@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Site.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MessagesController : ControllerBase
@@ -20,7 +21,6 @@ namespace Site.Api.Controllers
             _mediator = mediator;
         }
 
-        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetMessages()
         {
