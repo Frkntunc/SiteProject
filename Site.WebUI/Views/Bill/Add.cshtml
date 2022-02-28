@@ -1,0 +1,68 @@
+﻿@model AddBillModel
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1 class="m-0">Yeni Fatura</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Add" asp-controller="Bill" method="post" class="w-75 mx-auto mt-2 p-2">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="form-group">
+                                <label asp-for="Electric"></label>
+                                <input asp-for="Electric" class="form-control" />
+                                <span asp-validation-for="Electric" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Water"></label>
+                                <input asp-for="Water" class="form-control" />
+                                <span asp-validation-for="Water" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="NaturalGas"></label>
+                                <input asp-for="NaturalGas" class="form-control" />
+                                <span asp-validation-for="NaturalGas" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Dues"></label>
+                                <input asp-for="Dues" class="form-control" />
+                                <span asp-validation-for="Dues" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Month"></label>
+                                <input asp-for="Month" class="form-control" />
+                                <span asp-validation-for="Month" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Kaydet</button>
+                            </div>
+
+                            @if (ViewData["ErrorMesaj"] != null)
+                            {
+                                <h1>@ViewData["ErrorMessage"]</h1>
+                            }
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
